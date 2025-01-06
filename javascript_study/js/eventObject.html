@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class = "text-input">
+    <input type="text" class = "text-input2">
+    <button class="submit-button">확인</button>
+    <script>
+        let data = {
+            text1 : "",
+            text2 : "",
+        }
+// 모든 이벤트 함수에는 이벤트 객체를 매개변수로 전달해줌 
+        function handleInputOnChange() {
+            const InputElement = document.querySelector(".text-input");
+            data = {
+                ...data,
+                text1: InputElement.value,
+            }
+            console.log(data);
+        }
+
+        function handleInputOnChange2(e) {
+            data = {
+                ...data,
+                text2: e.target.value,
+            }
+            // event.target.value,
+            
+        }
+        
+        function handleSubmitOnClick(e) {
+            console.log(e);
+            console.log
+            
+        }
+
+        window.onload = () => {
+            const textInputElement = document.querySelector(".text-input");
+            const textInputElement2 = document.querySelector(".text-input2");
+            const submitButtonElement = document.querySelector(".submit-button");
+
+            textInputElement.onkeyup = handleInputOnChange;
+            textInputElement.onkeyup = handleInputOnChange2;
+            textSubmitElement.onkeydown = handleSubmitOnClick;
+            
+        }
+
+    </script>
+
+</body>
+</html>
